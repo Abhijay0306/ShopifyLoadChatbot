@@ -1,4 +1,4 @@
---extra-index-url https://download.pytorch.org/whl/cpu
+--find-links https://download.pytorch.org/whl/cpu
 fastapi
 uvicorn
 pydantic
@@ -11,6 +11,6 @@ langchain-huggingface
 langchain-qdrant
 qdrant-client
 sentence-transformers
-# Pin torch to ensure we get the CPU version from the extra index
-torch>=2.2.0
+# Pin to a version known to have +cpu variant in the find-links url
+torch>=2.2.0+cpu
 numpy
