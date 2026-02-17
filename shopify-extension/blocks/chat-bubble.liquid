@@ -1,0 +1,53 @@
+{% schema %}
+{
+  "name": "AI Chat Bubble",
+  "target": "body",
+  "stylesheet": "chat.css",
+  "javascript": "chat.js",
+  "settings": [
+    {
+      "type": "text",
+      "id": "api_url",
+      "label": "API URL",
+      "default": "https://your-vercel-app.vercel.app/ask"
+    },
+    {
+      "type": "color",
+      "id": "bubble_color",
+      "label": "Bubble Color",
+      "default": "#000000"
+    }
+  ]
+}
+{% endschema %}
+
+<div id="ai-chat-bubble-container" style="--bubble-color: {{ block.settings.bubble_color }};">
+  <button id="ai-chat-toggle" aria-label="Open AI Chat">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+  </button>
+
+  <div id="ai-chat-window" class="hidden">
+    <div class="chat-header">
+      <h3>Technical Assistant</h3>
+      <button id="ai-chat-close">&times;</button>
+    </div>
+    <div id="chat-messages">
+      <div class="message system">
+        Hello! I can answer technical questions about our products based on the data sheets. How can I help?
+      </div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="chat-input" placeholder="Ask a question..." />
+      <button id="chat-send">Send</button>
+    </div>
+    <div class="chat-footer">
+      Powered by DeepSeek AI
+    </div>
+  </div>
+</div>
+
+<script>
+  window.AI_CHAT_API_URL = "{{ block.settings.api_url }}";
+</script>
