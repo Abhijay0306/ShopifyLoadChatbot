@@ -3,11 +3,11 @@ uvicorn
 pydantic
 python-dotenv
 requests
-# LangChain & RAG
+# LangChain & RAG (Production)
 langchain
 langchain-community
 langchain-huggingface
-chromadb
+langchain-qdrant
+qdrant-client
 sentence-transformers
-pypdf
-unstructured
+# Excluded ingestion tools: unstructured, pypdf, chromadb (since we use qdrant now)
