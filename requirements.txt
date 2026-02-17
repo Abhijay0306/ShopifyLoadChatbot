@@ -3,12 +3,14 @@ fastapi
 uvicorn
 pydantic
 python-dotenv
-requests
+requests>=2.32.0
+urllib3>=1.26.19
 langchain
 langchain-community
 langchain-huggingface
 langchain-qdrant
 qdrant-client
 sentence-transformers
-torch
+# Pin torch to ensure we get the CPU version from the extra index
+torch>=2.2.0
 numpy
