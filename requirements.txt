@@ -10,4 +10,6 @@ langchain-huggingface
 langchain-qdrant
 qdrant-client
 sentence-transformers
-# Excluded ingestion tools: unstructured, pypdf, chromadb (since we use qdrant now)
+# Force CPU versions of Torch for Vercel
+torch --index-url https://download.pytorch.org/whl/cpu
+numpy
